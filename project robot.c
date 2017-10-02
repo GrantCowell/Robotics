@@ -35,11 +35,11 @@ task main()
   motor(motorA)= 70;
   motor(motorB)= 100;
 	wait1Msec(3000);
-
-		if(getMotorEncoder(motorA > 4000)
+	if(getMotorEncoder(motorA > 4000)
   {
  	motor(motorA)= 100;
   motor(motorB)= 100;
+  wait1Msec(5000);
   }
   }
 	}
