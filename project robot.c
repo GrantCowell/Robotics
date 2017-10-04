@@ -13,35 +13,41 @@ task main()
 	int mode = 1;
 	while(true)
 	{
-	if(mode== 1)
-	{
-	motor(motorB)= speedleft;
-	motor(motorA)= speedright;
-	wait1Msec(4000);
-	speedright=speedright + 10;
-	speedleft=speedleft + 10;
-	}
-	if(SensorValue(button) == 1)
-	{
-	mode = 2;
-	}
-	if(mode ==2)
-	{
-	if(SensorValue(button)==1)
-	{
-  motor(motorB)= -80;
-  motor(motorA)= -50;
-  wait1Msec(1500);
-  motor(motorA)= 70;
-  motor(motorB)= 100;
-	wait1Msec(3000);
-	if(getMotorEncoder(motorA) > 4000)
-  {
- 	motor(motorA)= 100;
-  motor(motorB)= 100;
-  wait1Msec(5000);
-  }
-  }
-	}
+		if(mode== 1)
+		{
+			motor(motorB)= speedleft;
+			motor(motorA)= speedright;
+			wait1Msec(4000);
+			speedright=speedright + 10;
+			speedleft=speedleft + 10;
+		if(SensorValue(button) == 1)
+			{
+			resetMotorEncoder(motorA);
+			mode = 2;
+			}
+		}
+		if(SensorValue(button) == 1)
+		{
+			mode = 2;
+		}
+		if(mode ==2)
+		{
+			if(SensorValue(button)==1)
+			{
+			  motor(motorB)= -80;
+			  motor(motorA)= -50;
+			  wait1Msec(1500);
+			  motor(motorA)= 60;
+			  motor(motorB)= 100;
+				wait1Msec(1500);
+				if(getMotorEncoder(motorA) > 4000)
+			  {
+				 	motor(motorA)= 100;
+				  motor(motorB)= 100;
+				  wait1Msec(5000);
+				  mode = 1;
+			  }
+		  }
+		}
 	}
 }
