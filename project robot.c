@@ -36,11 +36,11 @@ task main()
 			{
 			  motor(motorB)= -80;
 			  motor(motorA)= -50;
-			  wait1Msec(1500);
-			  motor(motorA)= 60;
+			  wait1Msec(3000);
+			  motor(motorA)= 85;
 			  motor(motorB)= 100;
 				wait1Msec(1500);
-				if(getMotorEncoder(motorA) > 4000)
+				if(getMotorEncoder(motorA) > 7000)
 			  {
 				 	motor(motorA)= 100;
 				  motor(motorB)= 100;
@@ -50,21 +50,4 @@ task main()
 		  }
 		}
 	}
-  if(SensorValue(button)== 0)
-  {
-  motor(motorB)= -80;
-  motor(motorA)= -50;
-  wait1Msec(1500);
-	}
-  motor(motorA)= 70;
-  motor(motorB)= 100;
-
-    if(getMotorEncoder(motorA) > 2000)
-  {
-  motor(motorA)= 100;
-  motor(motorB)= 100;
-
-
-}
-
 }
