@@ -40,7 +40,7 @@ task main()
 			  motor(motorA)= 85;
 			  motor(motorB)= 100;
 				wait1Msec(1500);
-				if(getMotorEncoder(motorA) > 7000)
+				if(getMotorEncoder(motorA) > 4000)
 			  {
 				 	motor(motorA)= 100;
 				  motor(motorB)= 100;
