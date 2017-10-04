@@ -26,4 +26,21 @@ task main()
 	speedright = speedright + 15;
 	speedleft = speedleft + 10;
 	}
+  if(SensorValue(button)== 0)
+  {
+  motor(motorB)= -80;
+  motor(motorA)= -50;
+  wait1Msec(1500);
+	}
+  motor(motorA)= 70;
+  motor(motorB)= 100;
+
+    if(getMotorEncoder(motorA) > 2000)
+  {
+  motor(motorA)= 100;
+  motor(motorB)= 100;
+
+
+}
+
 }
