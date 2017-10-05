@@ -37,14 +37,18 @@ task main()
 			  motor(motorB)= -80;
 			  motor(motorA)= -50;
 			  wait1Msec(3000);
-			  motor(motorA)= 85;
+			  motor(motorA)= 80;
 			  motor(motorB)= 100;
 				wait1Msec(1500);
-				if(getMotorEncoder(motorA) > 4000)
+				if(getMotorEncoder(motorA) > 6000)
 			  {
-				 	motor(motorA)= 100;
+				  motor(motorA)= -100;
 				  motor(motorB)= 100;
-				  wait1Msec(5000);
+			  	motor(motorA)= 100;
+				  motor(motorB)= 100;
+				  wait1Msec(4000);
+				  speedleft = 10;
+				  speedright = 20;
 				  mode = 1;
 			  }
 		  }
